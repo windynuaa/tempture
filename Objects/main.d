@@ -18,3 +18,5 @@
 .\objects\main.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
 .\objects\main.o: ds18b20.h
 .\objects\main.o: keyboard.h
+.\objects\main.o: oled.h
+.\objects\main.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h

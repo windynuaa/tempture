@@ -3,11 +3,29 @@
 #include <stdio.h>
 #include "ds18b20.h"
 #include "keyboard.h"
+#include "oled.h"
 int delay_time;
 //HCLK=72M
 //PCLK2=72M
 //PCLK1=36M;
 //ds18b20 12 bit convert time : 750 ms
+
+
+/*
+PA1 beeper
+PA5 SCL
+PA7 SDA
+PA9 TX
+PA10 RX
+
+
+
+
+
+*/
+char str_buffer[20];
+
+
 void delay_us(int a)
 {
 	SysTick->LOAD=a*9;          	// 72m=1s       
@@ -67,35 +85,37 @@ int main()
 	
 	int a;
 	int gate;
-	char b,c,d,e,f,g;
+	char count=0;
 	gpio_ini();
 	ds18b20_init();
 	uart_init();
 	printf("hello world");
+	OLED_Init();
+	OLED_Clear();
 	while (1)
 	{
-		delay_us(1000);
+		
 		GPIO_SetBits(GPIOA,GPIO_Pin_1);
+		delay_us(250000);
 		a=(int)(ds18b20_read()*10000);
 		//if(a>gate)
 			
-		
+		count++;
+		if(count>127)
+			count=0;
+		OLED_draw_line(count,5,a/10000);
 		printf("%d\r\n",a);
-		
-		g=a%10+'0';
-		a/=10;
-		f=a%10+'0';
-		a/=10;
-		e=a%10+'0';
-		a/=10;
-		d=a%10+'0';
-		a/=10;
-		c=a%10+'0';
-		a/=10;
-		b=a%10+'0';
-
-		delay_us(1000);
-		GPIO_ResetBits(GPIOA,GPIO_Pin_1);
+		OLED_ShowString(32,0,"Tempture",16);
+		OLED_ShowNum(0+36,2,a/10000,2,16);
+		OLED_ShowChar(16+36,2,'.',16);
+		OLED_ShowNum(24+36,2,a%10000,4,16);
+		if(a>470000){
+			OLED_ShowString(0,7," ! OVER  HEAT ! ",8);
+			GPIO_ResetBits(GPIOA,GPIO_Pin_1);
+		}
+		else
+			OLED_ShowString(0,7,"                ",8);
+		delay_us(250000);
 		//printf("temp : %.4f\n",a);
 	
 	}

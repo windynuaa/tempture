@@ -2,6 +2,7 @@
 ".\objects\main.o"
 ".\objects\ds18b20.o"
 ".\objects\keyboard.o"
+".\objects\oled.o"
 ".\objects\misc.o"
 ".\objects\stm32f10x_gpio.o"
 ".\objects\stm32f10x_i2c.o"
