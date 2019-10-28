@@ -2,6 +2,7 @@
 #include "stm32f10x.h"                  // Device header
 #include <stdio.h>
 #include "ds18b20.h"
+#include "keyboard.h"
 int delay_time;
 //HCLK=72M
 //PCLK2=72M
@@ -40,7 +41,6 @@ int fputc(int ch, FILE* stream)
 {
     USART_SendData(USART1, (unsigned char) ch);
     while (!(USART1->SR & USART_FLAG_TXE));
-    //USART_SendData(USART1, (uint8_t)ch);
     return ch;
 }
 
@@ -48,9 +48,11 @@ void gpio_ini()
 {
 	GPIO_InitTypeDef gpio;
 	RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOA,ENABLE);
+	//led(beeper)
 	gpio.GPIO_Mode=GPIO_Mode_Out_PP;
 	gpio.GPIO_Speed=GPIO_Speed_50MHz;
 	gpio.GPIO_Pin=GPIO_Pin_1;
+	//usart
 	GPIO_Init(GPIOA,&gpio);
 	gpio.GPIO_Mode=GPIO_Mode_AF_PP;
 	gpio.GPIO_Pin=GPIO_Pin_9;
@@ -72,7 +74,7 @@ int main()
 	printf("hello world");
 	while (1)
 	{
-		delay_us(100000);
+		delay_us(1000);
 		GPIO_SetBits(GPIOA,GPIO_Pin_1);
 		a=(int)(ds18b20_read()*10000);
 		//if(a>gate)
@@ -92,7 +94,7 @@ int main()
 		a/=10;
 		b=a%10+'0';
 
-		delay_us(100000);
+		delay_us(1000);
 		GPIO_ResetBits(GPIOA,GPIO_Pin_1);
 		//printf("temp : %.4f\n",a);
 	
