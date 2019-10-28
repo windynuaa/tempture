@@ -3,7 +3,7 @@
 #define DisableINT()
 
 #define DS_PORT   GPIOA           //DS18B20 control pin
-#define DS_DQIO   GPIO_Pin_1      //GPIOA1
+#define DS_DQIO   GPIO_Pin_0      //GPIOA0
 
 #define DS_RCC_PORT  RCC_APB2Periph_GPIOA
 
@@ -20,7 +20,7 @@
 
 void Delay_us(u32 Nus) 
 {  
- SysTick->LOAD=Nus*72;          	// 72m=1s       
+ SysTick->LOAD=Nus*9;          	// 72m=1s       
  SysTick->CTRL|=0x01;             //  start   
  while(!(SysTick->CTRL&(1<<16))); //  get flag
  SysTick->CTRL=0X00000000;        //  close
@@ -31,16 +31,17 @@ void Delay_us(u32 Nus)
 
 unsigned char ResetDS18B20(void)
 {
- unsigned char resport;
+ unsigned char resport=0xff;
  SetDQ();
  Delay_us(50);
  
  ResetDQ();
- Delay_us(500);  //500us ( 480 to 960 us)
+ Delay_us(740);  //500us ( 480 to 960 us)
  SetDQ();
  Delay_us(40);  //40us
  //resport = GetDQ();
- while(GetDQ());
+ while(GetDQ()&&resport);
+	// resport--;
  Delay_us(500);  //500us
  SetDQ();
  return resport;
@@ -134,7 +135,7 @@ void DS18B20_Configuration(void)
 {
  GPIO_InitTypeDef GPIO_InitStructure;
  
- RCC_APB2PeriphClockCmd(DS_RCC_PORT, ENABLE);
+ //RCC_APB2PeriphClockCmd(DS_RCC_PORT, ENABLE);
 
  GPIO_InitStructure.GPIO_Pin = DS_DQIO;
  GPIO_InitStructure.GPIO_Mode = GPIO_Mode_Out_OD; //
