@@ -13,8 +13,8 @@ int delay_time;
 
 /*
 PA1 beeper
-PA5 SCL
-PA7 SDA
+PA3 SCL
+PA2 SDA
 PA9 TX
 PA10 RX
 
@@ -89,35 +89,46 @@ int main()
 	gpio_ini();
 	ds18b20_init();
 	uart_init();
-	printf("hello world");
 	OLED_Init();
 	OLED_Clear();
+	OLED_ShowString(32,0,"Tempture",16);
 	while (1)
 	{
 		
 		GPIO_SetBits(GPIOA,GPIO_Pin_1);
 		delay_us(250000);
 		a=(int)(ds18b20_read()*10000);
-		//if(a>gate)
-			
-		count++;
 		if(count>127)
 			count=0;
-		OLED_draw_line(count,5,a/10000);
-		printf("%d\r\n",a);
-		OLED_ShowString(32,0,"Tempture",16);
-		OLED_ShowNum(0+36,2,a/10000,2,16);
-		OLED_ShowChar(16+36,2,'.',16);
-		OLED_ShowNum(24+36,2,a%10000,4,16);
 		if(a>470000){
 			OLED_ShowString(0,7," ! OVER  HEAT ! ",8);
 			GPIO_ResetBits(GPIOA,GPIO_Pin_1);
+			while(a>470000)
+			{
+				a=(int)(ds18b20_read()*10000);
+				OLED_ShowString(36,2,"         ",16);
+				OLED_ShowNum(0+36,2,a/10000,2,16);
+				OLED_ShowChar(16+36,2,'.',16);
+				
+				OLED_ShowNum(24+36,2,a%10000,4,16);
+				OLED_ShowChar(24+32+36,2,'C',16);
+				delay_us(500000);
+			}
+			OLED_Clear();
+			OLED_ShowString(32,0,"Tempture",16);
+			count=0;
 		}
 		else
-			OLED_ShowString(0,7,"                ",8);
+		{
+			OLED_draw_line(count++,5,a/10000);
+		}
+		
+		OLED_ShowString(36,2,"         ",16);
+		OLED_ShowNum(0+36,2,a/10000,2,16);
+		OLED_ShowChar(16+36,2,'.',16);
+		OLED_ShowNum(24+36,2,a%10000,4,16);
+		OLED_ShowChar(24+32+36,2,'C',16);
 		delay_us(250000);
-		//printf("temp : %.4f\n",a);
-	
 	}
 }
 

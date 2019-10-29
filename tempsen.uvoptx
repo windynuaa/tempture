@@ -177,7 +177,39 @@
         <Bp>
           <Number>0</Number>
           <Type>0</Type>
-          <LineNumber>232</LineNumber>
+          <LineNumber>236</LineNumber>
+          <EnabledFlag>1</EnabledFlag>
+          <Address>134220556</Address>
+          <ByteObject>0</ByteObject>
+          <HtxType>0</HtxType>
+          <ManyObjects>0</ManyObjects>
+          <SizeOfObject>0</SizeOfObject>
+          <BreakByAccess>0</BreakByAccess>
+          <BreakIfRCount>1</BreakIfRCount>
+          <Filename>.\oled.c</Filename>
+          <ExecCommand></ExecCommand>
+          <Expression>\\tempsen\oled.c\236</Expression>
+        </Bp>
+        <Bp>
+          <Number>1</Number>
+          <Type>0</Type>
+          <LineNumber>235</LineNumber>
+          <EnabledFlag>1</EnabledFlag>
+          <Address>134220546</Address>
+          <ByteObject>0</ByteObject>
+          <HtxType>0</HtxType>
+          <ManyObjects>0</ManyObjects>
+          <SizeOfObject>0</SizeOfObject>
+          <BreakByAccess>0</BreakByAccess>
+          <BreakIfRCount>1</BreakIfRCount>
+          <Filename>.\oled.c</Filename>
+          <ExecCommand></ExecCommand>
+          <Expression>\\tempsen\oled.c\235</Expression>
+        </Bp>
+        <Bp>
+          <Number>2</Number>
+          <Type>0</Type>
+          <LineNumber>234</LineNumber>
           <EnabledFlag>1</EnabledFlag>
           <Address>134220538</Address>
           <ByteObject>0</ByteObject>
@@ -188,39 +220,7 @@
           <BreakIfRCount>1</BreakIfRCount>
           <Filename>.\oled.c</Filename>
           <ExecCommand></ExecCommand>
-          <Expression>\\tempsen\oled.c\232</Expression>
-        </Bp>
-        <Bp>
-          <Number>1</Number>
-          <Type>0</Type>
-          <LineNumber>234</LineNumber>
-          <EnabledFlag>1</EnabledFlag>
-          <Address>134220558</Address>
-          <ByteObject>0</ByteObject>
-          <HtxType>0</HtxType>
-          <ManyObjects>0</ManyObjects>
-          <SizeOfObject>0</SizeOfObject>
-          <BreakByAccess>0</BreakByAccess>
-          <BreakIfRCount>1</BreakIfRCount>
-          <Filename>.\oled.c</Filename>
-          <ExecCommand></ExecCommand>
           <Expression>\\tempsen\oled.c\234</Expression>
-        </Bp>
-        <Bp>
-          <Number>2</Number>
-          <Type>0</Type>
-          <LineNumber>233</LineNumber>
-          <EnabledFlag>1</EnabledFlag>
-          <Address>134220548</Address>
-          <ByteObject>0</ByteObject>
-          <HtxType>0</HtxType>
-          <ManyObjects>0</ManyObjects>
-          <SizeOfObject>0</SizeOfObject>
-          <BreakByAccess>0</BreakByAccess>
-          <BreakIfRCount>1</BreakIfRCount>
-          <Filename>.\oled.c</Filename>
-          <ExecCommand></ExecCommand>
-          <Expression>\\tempsen\oled.c\233</Expression>
         </Bp>
       </Breakpoint>
       <Tracepoint>

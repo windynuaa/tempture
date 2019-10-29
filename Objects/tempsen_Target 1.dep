@@ -1,5 +1,5 @@
 Dependencies for Project 'tempsen', Target 'Target 1': (DO NOT MODIFY !)
-F (.\main.c)(0x5DB6F6CA)(-c --cpu Cortex-M3 -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\TEMP-ID:\Desktop\TEMP\RTE\Device\STM32F103C8-ID:\Desktop\TEMP\RTE\_Target_1-ID:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0\CMSIS\Include-ID:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.3.0\Device\Include-ID:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.3.0\Device\StdPeriph_Driver\inc-D__UVISION_VERSION="522" -D_RTE_ -DSTM32F10X_MD-o .\objects\main.o --omf_browse .\objects\main.crf --depend .\objects\main.d)
+F (.\main.c)(0x5DB7ACDF)(-c --cpu Cortex-M3 -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\TEMP-ID:\Desktop\TEMP\RTE\Device\STM32F103C8-ID:\Desktop\TEMP\RTE\_Target_1-ID:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0\CMSIS\Include-ID:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.3.0\Device\Include-ID:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.3.0\Device\StdPeriph_Driver\inc-D__UVISION_VERSION="522" -D_RTE_ -DSTM32F10X_MD-o .\objects\main.o --omf_browse .\objects\main.crf --depend .\objects\main.d)
 I (D:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.3.0\Device\Include\stm32f10x.h)(0x5825386C)
 I (D:\Desktop\TEMP\RTE\_Target_1\RTE_Components.h)(0x5DB42831)
 I (D:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0\CMSIS\Include\core_cm3.h)(0x582539DE)
@@ -18,7 +18,7 @@ I (D:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.3.0\Device\StdPeriph_Driver\inc\misc
 I (D:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x57F606B8)
 I (ds18b20.h)(0x5DB4F4FB)
 I (keyboard.h)(0x5DB6540F)
-I (oled.h)(0x5DB6EFDD)
+I (oled.h)(0x5DB79E08)
 I (D:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x57F606B8)
 F (.\ds18b20.c)(0x5DB64CA0)(-c --cpu Cortex-M3 -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\TEMP-ID:\Desktop\TEMP\RTE\Device\STM32F103C8-ID:\Desktop\TEMP\RTE\_Target_1-ID:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0\CMSIS\Include-ID:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.3.0\Device\Include-ID:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.3.0\Device\StdPeriph_Driver\inc-D__UVISION_VERSION="522" -D_RTE_ -DSTM32F10X_MD-o .\objects\ds18b20.o --omf_browse .\objects\ds18b20.crf --depend .\objects\ds18b20.d)
 I (ds18b20.h)(0x5DB4F4FB)
@@ -55,8 +55,8 @@ I (D:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.3.0\Device\StdPeriph_Driver\inc\stm3
 I (D:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.3.0\Device\StdPeriph_Driver\inc\stm32f10x_usart.h)(0x52F9EB20)
 I (D:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.3.0\Device\StdPeriph_Driver\inc\misc.h)(0x52F9EB20)
 F (.\keyboard.h)(0x5DB6540F)()
-F (.\oled.c)(0x5DB6F463)(-c --cpu Cortex-M3 -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\TEMP-ID:\Desktop\TEMP\RTE\Device\STM32F103C8-ID:\Desktop\TEMP\RTE\_Target_1-ID:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0\CMSIS\Include-ID:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.3.0\Device\Include-ID:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.3.0\Device\StdPeriph_Driver\inc-D__UVISION_VERSION="522" -D_RTE_ -DSTM32F10X_MD-o .\objects\oled.o --omf_browse .\objects\oled.crf --depend .\objects\oled.d)
-I (oled.h)(0x5DB6EFDD)
+F (.\oled.c)(0x5DB7A847)(-c --cpu Cortex-M3 -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\TEMP-ID:\Desktop\TEMP\RTE\Device\STM32F103C8-ID:\Desktop\TEMP\RTE\_Target_1-ID:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0\CMSIS\Include-ID:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.3.0\Device\Include-ID:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.3.0\Device\StdPeriph_Driver\inc-D__UVISION_VERSION="522" -D_RTE_ -DSTM32F10X_MD-o .\objects\oled.o --omf_browse .\objects\oled.crf --depend .\objects\oled.d)
+I (oled.h)(0x5DB79E08)
 I (D:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.3.0\Device\Include\stm32f10x.h)(0x5825386C)
 I (D:\Desktop\TEMP\RTE\_Target_1\RTE_Components.h)(0x5DB42831)
 I (D:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0\CMSIS\Include\core_cm3.h)(0x582539DE)
@@ -73,7 +73,7 @@ I (D:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.3.0\Device\StdPeriph_Driver\inc\stm3
 I (D:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.3.0\Device\StdPeriph_Driver\inc\stm32f10x_usart.h)(0x52F9EB20)
 I (D:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.3.0\Device\StdPeriph_Driver\inc\misc.h)(0x52F9EB20)
 I (D:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x57F606B8)
-I (oledfont.h)(0x544D152F)
+I (oledfont.h)(0x5DB7AD72)
 F (D:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.3.0\Device\StdPeriph_Driver\src\misc.c)(0x52F9EB20)(-c --cpu Cortex-M3 -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\TEMP-ID:\Desktop\TEMP\RTE\Device\STM32F103C8-ID:\Desktop\TEMP\RTE\_Target_1-ID:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0\CMSIS\Include-ID:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.3.0\Device\Include-ID:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.3.0\Device\StdPeriph_Driver\inc-D__UVISION_VERSION="522" -D_RTE_ -DSTM32F10X_MD-o .\objects\misc.o --omf_browse .\objects\misc.crf --depend .\objects\misc.d)
 I (D:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.3.0\Device\StdPeriph_Driver\inc\misc.h)(0x52F9EB20)
 I (D:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.3.0\Device\Include\stm32f10x.h)(0x5825386C)

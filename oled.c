@@ -221,17 +221,21 @@ void OLED_Clear(void)
 		for(n=0;n<128;n++)OLED_WR_Byte(0,OLED_DATA); 
 	} //更新显示
 }
-
+/*
+画温度曲线函数
+*/
 void OLED_draw_line(int x,int y,int val)
 {
-		short buf;
+		int buf;
 		char seg;
-		seg=val/3;// 0~48 16bit 
-		buf=0x8000>>seg;
+		seg=val/2;// 0~48 24bit 
+		buf=0x800000>>seg;
 		OLED_Set_Pos(x,y);
 		OLED_WR_Byte(buf&0xff,OLED_DATA); 
 		OLED_Set_Pos(x,y+1);
 		OLED_WR_Byte((buf>>8)&0xff,OLED_DATA); 
+		OLED_Set_Pos(x,y+2);
+		OLED_WR_Byte((buf>>16)&0xff,OLED_DATA); 
 }
 
 void OLED_On(void)  
@@ -295,7 +299,7 @@ void OLED_ShowNum(u8 x,u8 y,u32 num,u8 len,u8 size2)
 		{
 			if(temp==0)
 			{
-				OLED_ShowChar(x+(size2/2)*t,y,' ',size2);
+				OLED_ShowChar(x+(size2/2)*t,y,'0',size2);//修搞过以0填充
 				continue;
 			}else enshow=1; 
 		 	 
@@ -340,11 +344,11 @@ void OLED_Init(void)
  	GPIO_InitTypeDef  GPIO_InitStructure;
  	
 	RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOA, ENABLE);	 //使能A端口时钟
-	GPIO_InitStructure.GPIO_Pin = GPIO_Pin_5|GPIO_Pin_7;	 
+	GPIO_InitStructure.GPIO_Pin = GPIO_Pin_2|GPIO_Pin_3;	 
  	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_Out_PP; 		 //推挽输出
 	GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;//速度50MHz
  	GPIO_Init(GPIOA, &GPIO_InitStructure);	  //初始化GPIOD3,6
- 	GPIO_SetBits(GPIOA,GPIO_Pin_5|GPIO_Pin_7);	
+ 	GPIO_SetBits(GPIOA,GPIO_Pin_2|GPIO_Pin_3);	
 
 
   Delay_1ms(800);
